@@ -29,10 +29,10 @@ async def start_msg(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🎓 Dev", url="https://t.me/SilentDemonSD"),
+                    InlineKeyboardButton("🎓 Dev", url="https://t.me/TryToLiveAlon"),
                     InlineKeyboardButton(
-                        "🔍 Deploy Own",
-                        url="https://github.com/SilentDemonSD/FZBypassBot",
+                        "♻️ Bypass Here",
+                        url="https://t.me/Link_Bypasser_Chat",
                     ),
                 ]
             ]
@@ -199,7 +199,7 @@ async def inline_query(client, query):
                     [
                         [
                             InlineKeyboardButton(
-                                "FZ Channel", url="https://t.me/FXTorrentz"
+                                "Main Channel", url="https://t.me/deathking_botworld"
                             ),
                             InlineKeyboardButton(
                                 "Try Bypass", switch_inline_query_current_chat="!bp "
