@@ -18,7 +18,7 @@ from FZBypass.core.bot_utils import AuthChatsTopics, convert_time, BypassFilter
 @Bypass.on_message(command("start"))
 async def start_msg(client, message):
     await message.reply(
-        f"""<b><i>FZ Bypass Bot!</i></b>
+        f"""<b><i>Bypass Bot!</i></b>
     
     <i>A Powerful Elegant Multi Threaded Bot written in Python... which can Bypass Various Shortener Links, Scrape links, and More ... </i>
     
@@ -188,7 +188,7 @@ async def inline_query(client, query):
             InlineQueryResultArticle(
                 title="♻️ Bypass Usage: In Line",
                 input_message_content=InputTextMessageContent(
-                    """<b><i>FZ Bypass Bot!</i></b>
+                    """<b><i>Bypass Bot!</i></b>
     
     <i>A Powerful Elegant Multi Threaded Bot written in Python... which can Bypass Various Shortener Links, Scrape links, and More ... </i>
     
