@@ -24,15 +24,15 @@ async def start_msg(client, message):
     
     <i><b>Bot Started {convert_time(time() - BOT_START)} ago...</b></i>
 
-🛃 <b>Use Me Here :</b> @CyberPunkGrp <i>(Bypass Topic)</i>""",
+🛃 <b>Use Me Here :</b> @Link_Bypasser_Chat <i>(Bypass Topic)</i>""",
         quote=True,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton("🎓 Dev", url="https://t.me/TryToLiveAlon"),
                     InlineKeyboardButton(
-                        "♻️ Bypass Here",
-                        url="https://t.me/Link_Bypasser_Chat",
+                        "♻️ Update Channel",
+                        url="https://t.me/deathking_botworld",
                     ),
                 ]
             ]
