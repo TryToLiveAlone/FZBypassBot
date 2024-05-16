@@ -7,7 +7,7 @@ lxml
 httpx
 python-dotenv
 pyrofork
-requests
 tgcrypto
-urllib3==1.26
 uvloop
+requests==2.25.1
+urllib3==1.26.5
