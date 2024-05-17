@@ -31,7 +31,7 @@ async def edit_or_reply(msg: Message, **kwargs):
 @Bypass.on_message(
     filters.command("eval") & SUDOERS & ~filters.forwarded & ~filters.via_bot
 )
-async def executor(client: app, message: Message):
+async def executor(client: Bypass, message: Message):
     if len(message.command) < 2:
         return await edit_or_reply(message, text="<b>ᴡʜᴀᴛ ʏᴏᴜ ᴡᴀɴɴᴀ ᴇxᴇᴄᴜᴛᴇ ʙᴀʙʏ ?</b>")
     try:
@@ -129,10 +129,10 @@ async def forceclose_command(_, CallbackQuery):
         return
 
 
-@app.on_edited_message(
+@Bypass.on_edited_message(
     filters.command("sh") & SUDOERS & ~filters.forwarded & ~filters.via_bot
 )
-@app.on_message(filters.command("sh") & SUDOERS & ~filters.forwarded & ~filters.via_bot)
+@Bypass.on_message(filters.command("sh") & SUDOERS & ~filters.forwarded & ~filters.via_bot)
 async def shellrunner(_, message: Message):
     if len(message.command) < 2:
         return await edit_or_reply(message, text="<b>ᴇxᴀᴍᴩʟᴇ :</b>\n/sh git pull")
