@@ -8,7 +8,7 @@ from io import StringIO
 from time import time
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-
+from FZBypass import Bypass
 
 async def aexec(code, client, message):
     exec(
