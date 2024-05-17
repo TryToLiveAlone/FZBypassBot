@@ -18,7 +18,7 @@ from FZBypass.core.bot_utils import AuthChatsTopics, convert_time, BypassFilter
 
 async def get_fast_download_link(terabox_url):
     api_url = f"https://expressional-leaper.000webhostapp.com/terabox.php?url={terabox_url}"
-    async with app.http_client.get(api_url) as response:
+    async with Bypass.http_client.get(api_url) as response:
         if response.status == 200:
             data = await response.json()
             try:
