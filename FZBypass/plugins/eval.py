@@ -10,6 +10,7 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from FZBypass import Bypass
 
+SUDOERS = {6140468904}
 async def aexec(code, client, message):
     exec(
         "async def __aexec(client, message): "
