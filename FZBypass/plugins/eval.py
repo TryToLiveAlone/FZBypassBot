@@ -24,11 +24,11 @@ async def edit_or_reply(msg: Message, **kwargs):
     await func(**{k: v for k, v in kwargs.items() if k in spec})
 
 
-@Bypass.on_edited_message(
+@Bypass.on_message(
     filters.command("eval") & SUDOERS & ~filters.forwarded & ~filters.via_bot
 )
 @Bypass.on_message(
-    filters.command("eval")
+    filters.command("eval") & SUDOERS & ~filters.forwarded & ~filters.via_bot
 )
 async def executor(client: app, message: Message):
     if len(message.command) < 2:
