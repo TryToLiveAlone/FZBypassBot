@@ -14,6 +14,26 @@ from FZBypass import Config, Bypass, BOT_START
 from FZBypass.core.bypass_checker import direct_link_checker, is_excep_link
 from FZBypass.core.bot_utils import AuthChatsTopics, convert_time, BypassFilter
 
+async def get_fast_download_link(terabox_url):
+    api_url = f"https://expressional-leaper.000webhostapp.com/terabox.php?url={terabox_url}"
+    async with app.http_client.get(api_url) as response:
+        if response.status == 200:
+            data = await response.json()
+            try:
+                fast_download_link = data['response'][0]['resolutions']['Fast Download']
+                return fast_download_link
+            except (KeyError, ValueError):
+                return "Error: Unable to parse JSON response or extract fast download link."
+        else:
+            return "Error: Unable to fetch data from the API."
+            
+@Bypass.on_message(filters.command("tb"))
+async def tb_command(_, message: Message):
+    terabox_url = message.text.split('/tb')[1].strip()
+    fast_download_link = await get_fast_download_link(terabox_url)
+    await message.reply_text(f"Fast Download Link: {fast_download_link}")
+
+
 
 @Bypass.on_message(command("start"))
 async def start_msg(client, message):
