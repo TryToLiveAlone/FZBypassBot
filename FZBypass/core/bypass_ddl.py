@@ -66,7 +66,22 @@ async def shrdsk(url: str) -> str:
     if "type" in res and res["type"].lower() == "upload" and "video_url" in res:
         return quote(res["video_url"], safe=":/")
     raise DDLException("No Direct Link Found")
-
+    
+async def terabox_fallback(url: str) -> str:
+    # Call the Terabox API function
+    api_url = f"https://teraboxvideodownloader.nepcoderdevs.workers.dev/?url={url}"
+    async with aiohttp.ClientSession() as session:
+        async with session.get(api_url) as response:
+            if response.status == 200:
+                data = await response.json()
+                if "response" in data and data["response"]:
+                    resolutions = data["response"][0]["resolutions"]
+                    if "Fast Download" in resolutions:
+                        return resolutions["Fast Download"]
+                else:
+                    raise Exception("No valid response found from the Terabox API")
+            else:
+                raise Exception("Failed to fetch data from the Terabox API")
 
 async def terabox(url: str) -> str:
     sess = Session()
