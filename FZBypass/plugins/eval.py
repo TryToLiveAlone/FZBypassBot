@@ -104,13 +104,13 @@ async def executor(client: Bypass, message: Message):
         await edit_or_reply(message, text=final_output, reply_markup=keyboard)
 
 
-@app.on_callback_query(filters.regex(r"runtime"))
+@Bypass.on_callback_query(filters.regex(r"runtime"))
 async def runtime_func_cq(_, cq):
     runtime = cq.data.split(None, 1)[1]
     await cq.answer(runtime, show_alert=True)
 
 
-@app.on_callback_query(filters.regex("forceclose"))
+@Bypass.on_callback_query(filters.regex("forceclose"))
 async def forceclose_command(_, CallbackQuery):
     callback_data = CallbackQuery.data.strip()
     callback_request = callback_data.split(None, 1)[1]
