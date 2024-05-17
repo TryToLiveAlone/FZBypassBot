@@ -10,6 +10,8 @@ from pyrogram.types import (
 from pyrogram.enums import MessageEntityType
 from pyrogram.errors import QueryIdInvalid
 from pyrogram import filters
+from pyrogram.types import Message
+
 from FZBypass import Config, Bypass, BOT_START
 from FZBypass.core.bypass_checker import direct_link_checker, is_excep_link
 from FZBypass.core.bot_utils import AuthChatsTopics, convert_time, BypassFilter
